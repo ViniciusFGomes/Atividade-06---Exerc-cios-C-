@@ -1,0 +1,286 @@
+a)class Program//Define uma classe chamada "Program"
+{
+    static void Main()//Define o método principal "Main" que é o ponto de entrada do programa
+    {
+        int[] vetor = { 10, 20, 30, 40, 50 };//Cria um array de inteiros chamado "vetor" e inicializa com os valores 10, 20, 30, 40 e 50
+
+        for (int i = 0; i < vetor.Length; i++)//Inicia um loop "for" que percorre cada elemento do array "vetor"
+        {
+            Console.WriteLine(vetor[i]);//Imprime o valor do elemento atual do array "vetor" no console
+        }
+    }
+}
+
+b)class Program//define uma classe chamada Program
+{
+    static void Main()//define o método Main, que é o ponto de entrada do programa
+    {
+        string[] nome = new string[5];//define um array de strings chamado nome com tamanho 5
+        double[] nota1 = new double[5];//define um array de doubles chamado nota1 com tamanho 5
+        double[] nota2 = new double[5];//define um array de doubles chamado nota2 com tamanho 5
+
+        for (int i = 0; i < 5; i++)//define um loop for que itera 5 vezes
+        {
+            Console.Write("Nome: ");//exibe a mensagem "Nome: " no console
+            nome[i] = Console.ReadLine();//lê a entrada do usuário e armazena no array nome na posição i
+
+            Console.Write("Nota 1: ");//exibe a mensagem "Nota 1: " no console
+            nota1[i] = double.Parse(Console.ReadLine());//lê a entrada do usuário, converte para double e armazena no array nota1 na posição i
+
+            Console.Write("Nota 2: ");//exibe a mensagem "Nota 2: " no console
+            nota2[i] = double.Parse(Console.ReadLine());//lê a entrada do usuário, converte para double e armazena no array nota2 na posição i
+        }
+
+        Console.WriteLine("Listagem:");//exibe a mensagem "Listagem:" no console
+
+        for (int i = 0; i < 5; i++)//define um loop for que itera 5 vezes
+        {
+            double media = (nota1[i] + nota2[i]) / 2;// calcula a média das notas e armazena na variável media
+
+            Console.WriteLine($"{nome[i]} - Nota1: {nota1[i]} - Nota2: {nota2[i]} - Média: {media:F2}");//exibe o nome, nota1, nota2 e média formatada com 2 casas decimais no console
+        }
+    }
+}
+c)class Program//define uma classe chamada Program
+{
+    static void Main()//define o método Main, que é o ponto de entrada do programa
+    {
+        double[] vetor = { 7.5, 8.0, 9.2, 6.8, 10.0 };//define um array de números do tipo double chamado vetor, com 5 elementos
+        double soma = 0;//define uma variável do tipo double chamada soma, inicializada com 0
+        for (int i = 0; i < vetor.Length; i++)//define um loop for que percorre todos os elementos do array vetor
+        {
+            soma += vetor[i];//adiciona o valor do elemento atual do array vetor à variável soma
+        }
+        double media = soma / vetor.Length;//calcula a média dos elementos do array vetor, dividindo a soma pelo número de elementos do array
+        Console.WriteLine("Média = " + media);//imprime a média dos elementos do array vetor no console
+    }
+}
+d)class Program//define uma classe chamada Program
+{
+    static void Main()//define o método Main, que é o ponto de entrada do programa
+    {
+        int[] vetor = { 12, 25, 8, 41, 18 };//define um array de inteiros chamado vetor e inicializa com alguns valores
+        int maior = vetor[0];//define uma variável chamada maior e inicializa com o primeiro valor do array
+        for (int i = 1; i < vetor.Length; i++)//define um loop for que percorre o array a partir do segundo elemento
+        {
+            if (vetor[i] > maior)//verifica se o valor atual do array é maior que o valor armazenado em maior
+                maior = vetor[i];//se for, atualiza o valor de maior com o valor atual do array
+        }
+        Console.WriteLine("Maior valor: " + maior);//imprime o maior valor encontrado no array
+    }
+}
+e)using System;
+Console.Write("Quantidade de elementos: "); // solicita ao usuário a quantidade
+int n = int.Parse(Console.ReadLine()!); // converte a entrada para inteiro
+int[] v = new int[n]; // cria um vetor de inteiros com n posições
+// Preenche o vetor com valores informados pelo usuário
+for (int i = 0; i < n; i++)
+{
+    Console.Write($"Elemento[{i}]: ");
+    v[i] = int.Parse(Console.ReadLine()!); // armazena o valor na posição i
+}
+// Inicializa 'menor' com o primeiro elemento do vetor
+int menor = v[0];
+// Percorre o restante do vetor comparando valores para encontrar o menor
+for (int i = 1; i < v.Length; i++)
+{
+    if (v[i] < menor)
+    {
+        menor = v[i]; // atualiza o menor quando encontra um valor menor
+    }
+}
+// Exibe o menor valor encontrado
+Console.WriteLine($"Menor valor: {menor}");
+f)using System;
+
+int tamanho = 5;
+int[] a = new int[tamanho];
+int[] b = new int[tamanho];
+int[] soma = new int[tamanho];
+
+Console.WriteLine("Preencha o primeiro vetor (5 inteiros):");
+for (int i = 0; i < tamanho; i++)
+{
+    Console.Write($"A[{i}]: ");
+    a[i] = int.Parse(Console.ReadLine()!);
+}
+
+Console.WriteLine("Preencha o segundo vetor (5 inteiros):");
+for (int i = 0; i < tamanho; i++)
+{
+    Console.Write($"B[{i}]: ");
+    b[i] = int.Parse(Console.ReadLine()!);
+}
+
+// Gera o vetor soma
+for (int i = 0; i < tamanho; i++)
+{
+    soma[i] = a[i] + b[i];
+}
+
+// Imprime o vetor soma
+Console.WriteLine("Vetor soma:");
+for (int i = 0; i < tamanho; i++)
+{
+    Console.WriteLine($"[{i}] {a[i]} + {b[i]} = {soma[i]}");
+}
+
+g)using System;
+
+const int tamanho = 5;
+int[] a = new int[tamanho];
+int[] b = new int[tamanho];
+int[] soma = new int[tamanho];
+
+// Lê o primeiro vetor
+Console.WriteLine("Preencha o primeiro vetor (5 inteiros):");
+for (int i = 0; i < tamanho; i++)
+{
+    Console.Write($"A[{i}]: ");
+    a[i] = int.Parse(Console.ReadLine()!);
+}
+
+// Lê o segundo vetor
+Console.WriteLine("Preencha o segundo vetor (5 inteiros):");
+for (int i = 0; i < tamanho; i++)
+{
+    Console.Write($"B[{i}]: ");
+    b[i] = int.Parse(Console.ReadLine()!);
+}
+
+// Calcula o vetor soma
+for (int i = 0; i < tamanho; i++)
+{
+    soma[i] = a[i] + b[i];
+}
+
+// Imprime o vetor soma
+Console.WriteLine("Vetor soma:");
+for (int i = 0; i < tamanho; i++)
+{
+    Console.WriteLine($"[{i}] {a[i]} + {b[i]} = {soma[i]}");
+}
+
+h)using System;
+
+Console.Write("Quantidade de elementos: ");
+int n = int.Parse(Console.ReadLine()!);
+int[] v = new int[n];
+for (int i = 0; i < n; i++)
+{
+    Console.Write($"Elemento[{i}]: ");
+    v[i] = int.Parse(Console.ReadLine()!);
+}
+Array.Sort(v);
+Array.Reverse(v);
+Console.WriteLine("Vetor em ordem decrescente:");
+foreach (var x in v) Console.WriteLine(x);
+
+I)using System;
+const int quantidade = 10;
+string[] nomes = new string[quantidade];
+// Lê 10 nomes do usuário
+for (int i = 0; i < quantidade; i++)
+{
+    Console.Write($"Nome[{i + 1}]: ");
+    nomes[i] = Console.ReadLine() ?? string.Empty;
+}
+// Imprime a listagem de nomes
+Console.WriteLine("\nListagem de nomes:");
+for (int i = 0; i < quantidade; i++)
+{
+    Console.WriteLine($"{i + 1}. {nomes[i]}");
+}
+
+J)using System;
+using System.Globalization;
+
+// Sistema de controle de estoque simples
+// Armazena nome, quantidade e preço unitário de até 40 mercadorias
+// Menu:
+// 1 - Cadastra mercadorias (um por vez)
+// 2 - Exibe valor total em mercadorias da empresa
+// 3 - Sair
+
+const int MaxMercadorias = 40;
+string[] nomes = new string[MaxMercadorias];
+int[] quantidades = new int[MaxMercadorias];
+decimal[] precos = new decimal[MaxMercadorias];
+int cadastrados = 0;
+
+int ReadInt(string prompt)
+{
+    while (true)
+    {
+        Console.Write(prompt);
+        if (int.TryParse(Console.ReadLine(), NumberStyles.Integer, CultureInfo.CurrentCulture, out var v)) return v;
+        Console.WriteLine("Entrada inválida. Digite um número inteiro.");
+    }
+}
+
+decimal ReadDecimal(string prompt)
+{
+    while (true)
+    {
+        Console.Write(prompt);
+        if (decimal.TryParse(Console.ReadLine(), NumberStyles.Number, CultureInfo.CurrentCulture, out var d)) return d;
+        Console.WriteLine($"Entrada inválida. Digite um número (use '{CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator}' como separador decimal).");
+    }
+}
+
+while (true)
+{
+    Console.WriteLine();
+    Console.WriteLine("MENU");
+    Console.WriteLine("1. Cadastra mercadorias");
+    Console.WriteLine("2. Exibe valor total em mercadorias da empresa");
+    Console.WriteLine("3. Sair");
+    int opc = ReadInt("Opção: ");
+
+    if (opc == 1)
+    {
+        if (cadastrados >= MaxMercadorias)
+        {
+            Console.WriteLine("Capacidade máxima atingida (40 mercadorias).");
+            continue;
+        }
+
+        Console.WriteLine($"Cadastro de mercadoria #{cadastrados + 1}:");
+        Console.Write("Nome: ");
+        string nome = Console.ReadLine() ?? string.Empty;
+        int qtd = ReadInt("Quantidade em estoque: ");
+        decimal preco = ReadDecimal("Preço unitário: ");
+
+        nomes[cadastrados] = nome;
+        quantidades[cadastrados] = qtd;
+        precos[cadastrados] = preco;
+        cadastrados++;
+
+        Console.WriteLine("Mercadoria cadastrada com sucesso.");
+    }
+    else if (opc == 2)
+    {
+        if (cadastrados == 0)
+        {
+            Console.WriteLine("Nenhuma mercadoria cadastrada.");
+            continue;
+        }
+
+        decimal total = 0m;
+        for (int i = 0; i < cadastrados; i++)
+        {
+            total += quantidades[i] * precos[i];
+        }
+
+        Console.WriteLine($"Valor total em mercadorias: {total:C}");
+    }
+    else if (opc == 3)
+    {
+        Console.WriteLine("Saindo...");
+        break;
+    }
+    else
+    {
+        Console.WriteLine("Opção inválida. Digite 1, 2 ou 3.");
+    }
+}
