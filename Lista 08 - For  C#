@@ -1,0 +1,186 @@
+A)class Program //define uma classe chamada Program
+{
+    static void Main()//define o método Main, que é o ponto de entrada do programa
+    {
+        Console.WriteLine("O programa vai mostrar todos os numeros pares de 0 a 2");//exibe uma mensagem no console
+        for (int i = 0; i <= 100; i += 2)//inicia um loop for que começa em 0 e vai até 100, incrementando de 2 em 2
+        {
+            Console.WriteLine(i);//exibe o valor atual de i no console
+        }
+    }
+}
+
+B)class Program//define uma classe chamada Program
+{
+    static void Main()//define o método Main, que é o ponto de entrada do programa
+    {
+        Console.Write("Digite um número inteiro positivo para sabe os numeros pares ntere 0 e seu número ");//exibe uma mensagem pedindo ao usuário para digitar um número inteiro positivo
+        int numero = int.Parse(Console.ReadLine());//lê a entrada do usuário e converte para um número inteiro
+        for (int i =0; i <=numero; i+=2)//inicia um loop que começa em 0 e vai até o número digitado pelo usuário, incrementando de 2 em 2
+        {
+            Console.WriteLine(i);//exibe o valor atual de i, que representa os números pares entre 0 e o número digitado pelo usuário
+        }
+    }
+}
+C)class Program//define uma classe chamada Program
+{
+    static void Main()//define o método Main, que é o ponto de entrada do programa
+    {
+        Console.Write("Digite uma palavra: ");//exibe uma mensagem solicitando ao usuário que digite uma palavra
+        string palavra = Console.ReadLine();//lê a palavra digitada pelo usuário e armazena na variável "palavra"
+
+        if (!string.IsNullOrWhiteSpace(palavra))//verifica se a palavra não é nula, vazia ou composta apenas por espaços em branco
+        {
+            Console.WriteLine("Letras da palavra:");//exibe uma mensagem indicando que as letras da palavra serão exibidas
+
+            foreach (char letra in palavra)//itera sobre cada letra da palavra
+            {
+                Console.WriteLine(letra);//exibe cada letra da palavra em uma linha separada
+            }
+        }
+        else//se a palavra for nula, vazia ou composta apenas por espaços em branco
+        {
+            Console.WriteLine("Nenhuma palavra foi digitada.");//exibe uma mensagem indicando que nenhuma palavra foi digitada
+        }
+    }
+}
+D)class Program//Define uma classe chamada "Program"
+{
+    static void Main()//Define o método principal "Main" que é o ponto de entrada do programa
+    {
+        Console.Write("Digite um número inteiro positivo: "); // Solicita ao usuário que insira um número inteiro positivo
+
+        // Valida se a entrada é um número inteiro válido e maior que zero
+        if (int.TryParse(Console.ReadLine(), out int numero) && numero > 0)
+        {
+            int soma = 0;// Inicializa a variável "soma" com zero
+
+            for (int i = 1; i <= numero; i++)// Loop que percorre todos os números de 1 até o número inserido pelo usuário
+            {
+                soma += i;// Adiciona o valor de "i" à variável "soma"
+            }
+
+            Console.WriteLine("A soma de todos os números de 1 até "+numero+" é: "+soma);// Exibe o resultado da soma no console
+        }
+        else
+        {
+            Console.WriteLine("Entrada inválida. Por favor, insira um número inteiro positivo maior que zero.");// Exibe uma mensagem de erro caso a entrada seja inválida
+        }
+    }
+}
+E)class Program//Define uma classe chamada "Program"
+{
+    static void Main()//Define o método principal "Main" que é o ponto de entrada do programa
+    {
+        Console.Write("Digite um número inteiro: ");//Exibe uma mensagem solicitando ao usuário que digite um número inteiro
+        int numero = int.Parse(Console.ReadLine());//Lê a entrada do usuário, converte para inteiro e armazena na variável "numero"
+        bool primo = true;//Inicializa uma variável booleana "primo" como verdadeira, assumindo que o número é primo até que se prove o contrário
+        if (numero < 2)//Verifica se o número é menor que 2, pois números menores que 2 não são primos
+        {
+            primo = false;//Se o número for menor que 2, define "primo" como falso
+        }
+        else//Se o número for 2 ou maior, verifica se ele é primo
+        {
+            for (int i = 2; i <= Math.Sqrt(numero); i++)//Inicia um loop que vai de 2 até a raiz quadrada do número
+            {
+                if (numero % i == 0)//Verifica se o número é divisível por "i"
+                {
+                    primo = false;//Se for divisível, define "primo" como falso, indicando que o número não é primo
+                    break;//Sai do loop, pois já foi determinado que o número não é primo
+                }
+            }
+        }
+        if (primo)//Verifica o valor da variável "primo"
+            Console.WriteLine("O número é primo.");//Se "primo" for verdadeiro, exibe uma mensagem indicando que o número é primo
+        else//Se "primo" for falso, exibe uma mensagem indicando que o número não é primo
+            Console.WriteLine("O número não é primo.");//Exibe uma mensagem indicando que o número não é primo
+    }
+}
+F)class Program//define uma classe chamada Program
+{
+    static void Main()//define o método Main, que é o ponto de entrada do programa
+    {
+        Console.Write("Quantos números deseja inserir? ");//solicita ao usuário a quantidade de números que deseja inserir
+        int quantidade = int.Parse(Console.ReadLine());//lê a quantidade de números inseridos pelo usuário e converte para inteiro
+
+        int maior = int.MinValue;//inicializa a variável maior com o menor valor possível de um inteiro
+
+        for (int i = 1; i <= quantidade; i++)//inicia um loop que se repete a quantidade de vezes especificada pelo usuário
+        {
+            Console.Write($"Digite o {i}º número: ");//solicita ao usuário que insira um número
+            int numero = int.Parse(Console.ReadLine());//lê o número inserido pelo usuário e converte para inteiro
+
+            if (numero > maior)//verifica se o número inserido é maior que o valor atual de maior
+                maior = numero;//se for, atualiza o valor de maior com o novo número
+        }
+        Console.WriteLine("O maior número é: " + maior);//exibe o maior número encontrado
+    }
+}
+G)class Program//define uma classe chamada Program
+{
+    static void Main()//define o método Main, que é o ponto de entrada do programa
+    {
+        for (int numero = 5; numero <= 10; numero++)//define um loop for que itera de 5 a 10
+        {
+            Console.WriteLine("Tabuada do "+numero);//imprime a tabuada do número atual
+
+            for (int i = 1; i <= 10; i++)//define um loop for que itera de 1 a 10
+            {
+                Console.WriteLine(+numero+"x"+i+ "=" +numero*i);//imprime a multiplicação do número atual pelo valor de i
+            }
+        }
+    }
+}
+H)class Program//define uma classe chamada Program
+{
+    static void Main()//define o método Main, que é o ponto de entrada do programa
+    {
+        Console.Write("Digite um número inteiro positivo: ");//exibe uma mensagem solicitando ao usuário que digite um número inteiro positivo
+        int numero = int.Parse(Console.ReadLine());//lê a entrada do usuário, converte para inteiro e armazena na variável numero
+
+        Console.WriteLine("Divisores:");//exibe uma mensagem indicando que os divisores do número serão listados
+
+        for (int i = 1; i <= numero; i++)//inicia um loop que vai de 1 até o número digitado pelo usuário
+        {
+            if (numero % i == 0)//verifica se o número é divisível por i (ou seja, se o resto da divisão é zero)
+            {
+                Console.WriteLine(i);//se for divisível, exibe o valor de i, que é um divisor do número
+            }
+        }
+    }
+}
+I)class Program//define uma classe chamada Program
+{
+    static void Main()//define o método Main, que é o ponto de entrada do programa
+    {
+        Console.WriteLine("Números primos entre 1 e 100:");//imprime uma mensagem no console
+        for (int numero = 2; numero <= 100; numero++)//inicia um loop que percorre os números de 2 a 100
+        {
+            bool primo = true;//define uma variável booleana chamada primo e a inicializa como true
+            for (int i = 2; i <= Math.Sqrt(numero); i++)//inicia um loop que percorre os números de 2 até a raiz quadrada do número atual
+            {
+                if (numero % i == 0)//verifica se o número atual é divisível por i
+                {
+                    primo = false;//se for divisível, define primo como false
+                    break;//interrompe o loop interno
+                }
+            }
+            if (primo)//verifica se primo é true
+            {
+                Console.Write(numero + " ");//imprime o número atual no console, seguido de um espaço
+            }
+        }
+    }
+}
+J)class Program//define uma classe chamada Program
+{
+    static void Main()//define o método Main, que é o ponto de entrada do programa
+    {
+        int soma = 0;//define uma variável inteira chamada soma e inicializa com 0
+        for (int i = 2; i <= 100; i += 2)//define um loop for que itera de 2 a 100, incrementando de 2 em 2
+        {
+            soma += i;//adiciona o valor de i à variável soma
+        }
+        Console.WriteLine("A soma dos números pares entre 1 e 100 é: " + soma);//imprime o resultado da soma na tela
+    }
+}
